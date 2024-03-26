@@ -26,7 +26,7 @@ public type HybridEncryptionResult record {|
     byte[] cipherText;
 |};
 
-# Returns the ML-KEM-768-HPKE-encrypted value for the given data.
+# Returns the ML-KEM-768-AES-hybrid-encrypted value for the given data.
 # ```ballerina
 # string input = "Hello Ballerina";
 # byte[] data = input.toBytes();
@@ -52,7 +52,7 @@ public isolated function encryptMlKem768Hpke(byte[] input, PublicKey publicKey, 
     };
 }
 
-# Returns the ML-KEM-768-HPKE-decrypted value for the given encrypted data.
+# Returns the ML-KEM-768-AES-hybrid-encrypted value for the given encrypted data.
 # ```ballerina
 # string input = "Hello Ballerina";
 # byte[] data = input.toBytes();
@@ -78,7 +78,7 @@ public isolated function decryptMlKem768Hpke(byte[] input, byte[] encapsulatedKe
     return check decryptAesEcb(input, key);
 }
 
-# Returns the RSA-ML-KEM-768-HPKE-encrypted value for the given data.
+# Returns the RSA-KEM-ML-KEM-768-AES-hybrid-encrypted value for the given data.
 # ```ballerina
 # string input = "Hello Ballerina";
 # byte[] data = input.toBytes();
@@ -109,7 +109,7 @@ public isolated function encryptRsaKemMlKem768Hpke(byte[] input, PublicKey rsaPu
     };
 }
 
-# Returns the RSA-ML-KEM-768-HPKE-decrypted value for the given encrypted data.
+# Returns the RSA-KEM-ML-KEM-768-AES-hybrid-encrypted value for the given encrypted data.
 # ```ballerina
 # string input = "Hello Ballerina";
 # byte[] data = input.toBytes();
